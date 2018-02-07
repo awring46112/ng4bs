@@ -3,16 +3,21 @@ import { NgModule } from '@angular/core';
 
 
 import { AppComponent } from './app.component';
+import { AppNavbarComponent } from './app-navbar/app-navbar.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { BackendApiService } from './services/backend-api.service';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    AppNavbarComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    NgbModule.forRoot()
   ],
-  providers: [],
+  providers: [BackendApiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
