@@ -1,7 +1,25 @@
-<app-navbar></app-navbar> 
+<app-navbar></app-navbar>
 <div class="container">
   <div class="starter-template">
-      <h1>Bootstrap starter template</h1>
-      <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
+    <h1>Bootstrap starter template</h1>
+    <p class="lead">Use this document as a way to quickly start any new project.
+      <br> All you get is this text and a mostly barebones HTML document.</p>
   </div>
+</div>
+<div class="container">
+  <button class="btn btn-primary" (click)="getStuff()">Get Stuff</button>
+</div>
+<div class="container">
+  <div class="drop-container" ngFileDrop [options]="options" (uploadOutput)="onUploadOutput($event)" [uploadInput]="uploadInput"
+    [ngClass]="{ 'is-drop-over': dragOver }">
+    <h1>Drag &amp; Drop</h1>
+  </div>
+
+  <label class="upload-button">
+    <input type="file" ngFileSelect [options]="options" (uploadOutput)="onUploadOutput($event)" [uploadInput]="uploadInput" multiple> or choose file(s)
+  </label>
+
+  <button type="button" class="start-upload-btn" (click)="startUpload()">
+    Start Upload
+  </button>
 </div>

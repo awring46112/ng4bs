@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { AppNavbarComponent } from './app-navbar/app-navbar.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BackendApiService } from './services/backend-api.service';
+import { NgUploaderModule } from 'ngx-uploader';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { BackendApiService } from './services/backend-api.service';
   ],
   imports: [
     BrowserModule,
-    NgbModule.forRoot()
+    NgbModule.forRoot(),
+    NgUploaderModule
   ],
   providers: [BackendApiService],
   bootstrap: [AppComponent]
