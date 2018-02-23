@@ -16,13 +16,15 @@ export class BackendApiService {
   service: MyAPI;
 
   constructor() {
-    //this.service = new MyAPI('http://localhost:5000/');
-    this.service = new MyAPI('https://awr-todo.azurewebsites.net/');
+    this.service = new MyAPI('http://localhost:5000/');
+    //this.service = new MyAPI('https://awr-todo.azurewebsites.net/');
 
   }
 
   GetStuff(): Observable<TodoItem[]> {
     return Observable.fromPromise(this.service.apiTodoGet());
   }
+
+  
 
 }

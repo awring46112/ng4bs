@@ -16,6 +16,7 @@ export class AppComponent {
   uploadInput: EventEmitter<UploadInput>;
   humanizeBytes: Function;
   dragOver: boolean;
+  fileUploadResult: any;
 
 
   constructor(private service: BackendApiService) {
@@ -55,13 +56,15 @@ export class AppComponent {
       this.dragOver = false;
     } else if (output.type === 'drop') {
       this.dragOver = false;
+    } else if (output.type === 'done') {
+      this.fileUploadResult = output.file.response;
     }
   }
 
   startUpload(): void {
     const event: UploadInput = {
       type: 'uploadAll',
-      url: 'http://localhost:5000/api/Upload/UploadFiles',
+      url: 'http://localhost:5000/api/SDFile/UploadSDFile',
       method: 'POST'
     };
 
