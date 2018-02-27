@@ -5,6 +5,172 @@
  */
 
 
+export const IFormFile = {
+  required: false,
+  serializedName: 'IFormFile',
+  type: {
+    name: 'Composite',
+    className: 'IFormFile',
+    modelProperties: {
+      contentType: {
+        required: false,
+        readOnly: true,
+        serializedName: 'contentType',
+        type: {
+          name: 'String'
+        }
+      },
+      contentDisposition: {
+        required: false,
+        readOnly: true,
+        serializedName: 'contentDisposition',
+        type: {
+          name: 'String'
+        }
+      },
+      headers: {
+        required: false,
+        readOnly: true,
+        serializedName: 'headers',
+        type: {
+          name: 'Dictionary',
+          value: {
+              required: false,
+              serializedName: 'ArrayElementType',
+              type: {
+                name: 'Sequence',
+                element: {
+                    required: false,
+                    serializedName: 'stringElementType',
+                    type: {
+                      name: 'String'
+                    }
+                }
+              }
+          }
+        }
+      },
+      length: {
+        required: false,
+        readOnly: true,
+        serializedName: 'length',
+        type: {
+          name: 'Number'
+        }
+      },
+      name: {
+        required: false,
+        readOnly: true,
+        serializedName: 'name',
+        type: {
+          name: 'String'
+        }
+      },
+      fileName: {
+        required: false,
+        readOnly: true,
+        serializedName: 'fileName',
+        type: {
+          name: 'String'
+        }
+      }
+    }
+  }
+};
+
+export const Header = {
+  required: false,
+  serializedName: 'Header',
+  type: {
+    name: 'Composite',
+    className: 'Header',
+    modelProperties: {
+      name: {
+        required: false,
+        serializedName: 'name',
+        type: {
+          name: 'String'
+        }
+      },
+      info: {
+        required: false,
+        serializedName: 'info',
+        type: {
+          name: 'String'
+        }
+      },
+      comment: {
+        required: false,
+        serializedName: 'comment',
+        type: {
+          name: 'String'
+        }
+      }
+    }
+  }
+};
+
+export const SDFileItem = {
+  required: false,
+  serializedName: 'SDFileItem',
+  type: {
+    name: 'Composite',
+    className: 'SDFileItem',
+    modelProperties: {
+      header: {
+        required: false,
+        serializedName: 'header',
+        type: {
+          name: 'Composite',
+          className: 'Header'
+        }
+      },
+      cTab: {
+        required: false,
+        serializedName: 'cTab',
+        type: {
+          name: 'String'
+        }
+      },
+      version: {
+        required: false,
+        serializedName: 'version',
+        type: {
+          name: 'String'
+        }
+      },
+      properties: {
+        required: false,
+        serializedName: 'properties',
+        type: {
+          name: 'Dictionary',
+          value: {
+              required: false,
+              serializedName: 'ArrayElementType',
+              type: {
+                name: 'Sequence',
+                element: {
+                    required: false,
+                    serializedName: 'stringElementType',
+                    type: {
+                      name: 'String'
+                    }
+                }
+              }
+          }
+        }
+      },
+      svg: {
+        required: false,
+        serializedName: 'svg',
+        type: {
+          name: 'String'
+        }
+      }
+    }
+  }
+};
+
 export const TodoItem = {
   required: false,
   serializedName: 'TodoItem',

@@ -1,6 +1,18 @@
-import { Component, EventEmitter } from '@angular/core';
+import { Component, EventEmitter, Pipe, Sanitizer, PipeTransform } from '@angular/core';
 import { BackendApiService } from './services/backend-api.service';
 import { UploadOutput, UploadInput, UploadFile, humanizeBytes, UploaderOptions } from 'ngx-uploader';
+import { SDFileItem } from './data-service/models/index'
+import {DomSanitizer} from '@angular/platform-browser';
+
+
+@Pipe({ name: 'safeHtml'})
+export class SafeHtmlPipe implements PipeTransform  {
+  constructor(private sanitized: DomSanitizer) {}
+  transform(value) {
+    console.log(this.sanitized.bypassSecurityTrustHtml(value))
+    return this.sanitized.bypassSecurityTrustHtml(value);
+  }
+}
 
 @Component({
   selector: 'app-root',
@@ -17,6 +29,7 @@ export class AppComponent {
   humanizeBytes: Function;
   dragOver: boolean;
   fileUploadResult: any;
+  sdfileInfo: SDFileItem[];
 
 
   constructor(private service: BackendApiService) {
@@ -57,14 +70,16 @@ export class AppComponent {
     } else if (output.type === 'drop') {
       this.dragOver = false;
     } else if (output.type === 'done') {
-      this.fileUploadResult = output.file.response;
+      //this.fileUploadResult = output.file.response;
+      this.sdfileInfo = output.file.response as SDFileItem[];
     }
   }
 
   startUpload(): void {
     const event: UploadInput = {
       type: 'uploadAll',
-      url: 'http://localhost:5000/api/SDFile/UploadSDFile',
+      //url: 'http://localhost:5000/api/SDFile/UploadSDFile',
+      url: 'http://localhost:5000/api/GetSDFileInfo/GetSDFileInfo',
       method: 'POST'
     };
 

@@ -18,7 +18,6 @@ export class BackendApiService {
   constructor() {
     this.service = new MyAPI('http://localhost:5000/');
     //this.service = new MyAPI('https://awr-todo.azurewebsites.net/');
-
   }
 
   GetStuff(): Observable<TodoItem[]> {

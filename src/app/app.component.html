@@ -24,5 +24,12 @@
   </button>
 
   <h2>Output</h2>
-  <textarea ref-textarea [(ngModel)]="fileUploadResult" rows="20" cols="80"></textarea><br/>
+  <textarea ref-textarea [(ngModel)]="fileUploadResult" rows="20" cols="80"></textarea>
+  <br/>
+
+  <h3>things</h3>
+  <div *ngFor="let sditem of sdfileInfo">
+    <div [innerHTML]="sditem.svg | safeHtml"></div>
+    <!-- <textarea ref-textarea [(ngModel)]="sditem.svg" rows="20" cols="80"></textarea> -->
+  </div>
 </div>

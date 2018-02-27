@@ -9,6 +9,83 @@ import { RequestOptionsBase } from "ms-rest-js";
 
 /**
  * @interface
+ * An interface representing IFormFile.
+ */
+export interface IFormFile {
+  /**
+   * @member {string} [contentType]
+   */
+  readonly contentType?: string;
+  /**
+   * @member {string} [contentDisposition]
+   */
+  readonly contentDisposition?: string;
+  /**
+   * @member {{ [propertyName: string]: string[] }} [headers]
+   */
+  readonly headers?: { [propertyName: string]: string[] };
+  /**
+   * @member {number} [length]
+   */
+  readonly length?: number;
+  /**
+   * @member {string} [name]
+   */
+  readonly name?: string;
+  /**
+   * @member {string} [fileName]
+   */
+  readonly fileName?: string;
+}
+
+/**
+ * @interface
+ * An interface representing Header.
+ */
+export interface Header {
+  /**
+   * @member {string} [name]
+   */
+  name?: string;
+  /**
+   * @member {string} [info]
+   */
+  info?: string;
+  /**
+   * @member {string} [comment]
+   */
+  comment?: string;
+}
+
+/**
+ * @interface
+ * An interface representing SDFileItem.
+ */
+export interface SDFileItem {
+  /**
+   * @member {Header} [header]
+   */
+  header?: Header;
+  /**
+   * @member {string} [cTab]
+   */
+  cTab?: string;
+  /**
+   * @member {string} [version]
+   */
+  version?: string;
+  /**
+   * @member {{ [propertyName: string]: string[] }} [properties]
+   */
+  properties?: { [propertyName: string]: string[] };
+  /**
+   * @member {string} [svg]
+   */
+  svg?: string;
+}
+
+/**
+ * @interface
  * An interface representing TodoItem.
  */
 export interface TodoItem {
