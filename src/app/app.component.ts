@@ -9,7 +9,6 @@ import {DomSanitizer} from '@angular/platform-browser';
 export class SafeHtmlPipe implements PipeTransform  {
   constructor(private sanitized: DomSanitizer) {}
   transform(value) {
-    console.log(this.sanitized.bypassSecurityTrustHtml(value))
     return this.sanitized.bypassSecurityTrustHtml(value);
   }
 }
@@ -97,6 +96,7 @@ export class AppComponent {
   removeAllFiles(): void {
     this.uploadInput.emit({ type: 'removeAll' });
   }
+
 
 
 }
